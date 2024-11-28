@@ -1,0 +1,37 @@
+.image-container {
+    position: relative; /* Enables positioning of text over the image */
+    max-width: 100%;
+    margin: 20px auto; /* Centers the container */
+    border-left: 10px solid #ff8c00; /* Left border */
+    border-right: 10px solid #ff8c00; /* Right border */
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional rounded corners */
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    z-index: 10; /* Ensures text appears above the image */
+    color: rgb(3, 112, 27); /* Adjust text color to contrast with the image */
+    background-color: rgba(0, 0, 0, 0); /* Optional text background for readability */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .text-overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .text-overlay p {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 5px;
+  }
+  

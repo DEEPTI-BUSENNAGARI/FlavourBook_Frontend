@@ -1,0 +1,15 @@
+.container {
+    margin: 10px auto;
+    padding: 10px;
+    border-left: 10px solid #ff8c00;
+    border-right: 10px solid #ff8c00;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 90%;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ff8c00;
+}
