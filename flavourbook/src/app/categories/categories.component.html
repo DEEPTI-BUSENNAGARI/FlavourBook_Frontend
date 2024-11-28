@@ -1,5 +1,84 @@
-  <app-header></app-header>
+
+
+<!-- 
+<app-header></app-header>
 <div class="container">
   <h2>Categories</h2>
   <p>Explore a variety of recipe categories.</p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.description }}</td>
+        <td><img [src]="category.imagePath" alt="{{ category.name }}" style="width: 100px; height: 100px;" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="fetch-by-id">
+    <h3>Fetch Category by ID</h3>
+    <input [(ngModel)]="searchId" type="number" placeholder="Enter ID" />
+    <button class="btn btn-primary" (click)="fetchCategoryById()">Fetch</button>
+    <div *ngIf="fetchedCategory">
+      <h4>Category Details:</h4>
+      <p><strong>ID:</strong> {{ fetchedCategory.id }}</p>
+      <p><strong>Name:</strong> {{ fetchedCategory.name }}</p>
+      <p><strong>Description:</strong> {{ fetchedCategory.description }}</p>
+      <img [src]="fetchedCategory.imagePath" alt="{{ fetchedCategory.name }}" style="width: 100px; height: 100px;" />
+    </div>
+  </div>
+
+
+  <div class="add-category">
+    <h3>Add New Category</h3>
+    <input [(ngModel)]="newCategoryName" type="text" placeholder="Enter Name" />
+    <input [(ngModel)]="newCategoryDescription" type="text" placeholder="Enter Description" />
+    <input type="file" (change)="onFileSelected($event)" />
+    <button class="btn btn-success" (click)="addCategory()">Add</button>
+  </div>
+</div>
+ -->
+
+ <app-header></app-header>
+<div class="container">
+  <h2>Categories</h2>
+  <p>Explore a variety of recipe categories.</p>
+
+  <!-- Add New Category Button -->
+  <button class="btn btn-success mb-3" (click)="navigateToAddCategory()">+ Add New Category</button>
+
+  <!-- Display All Categories -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.description }}</td>
+        <td><img [src]="category.imagePath" alt="{{ category.name }}" style="width: 100px; height: 100px;" /></td>
+        <td>
+          <button class="btn btn-info" (click)="fetchCategoryById(category.id)">View Recipe</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

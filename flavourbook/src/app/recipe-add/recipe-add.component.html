@@ -1,0 +1,82 @@
+ <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h4>Add New Recipe</h4>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipeName" class="form-label">Recipe Name</label>
+                <input
+                  id="recipeName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Recipe Name"
+                  [(ngModel)]="newRecipe.name"
+                  name="recipeName"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="recipeDescription" class="form-label">Description</label>
+                <textarea
+                  id="recipeDescription"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Enter Recipe Description"
+                  [(ngModel)]="newRecipe.description"
+                  name="recipeDescription"
+                ></textarea>
+              </div>
+  
+              <div class="mb-3">
+                <label for="recipeIngredients" class="form-label">Ingredients</label>
+                <textarea
+                  id="recipeIngredients"
+                  class="form-control"
+                  rows="3"
+                  placeholder="List ingredients separated by commas"
+                  [(ngModel)]="newRecipe.ingredients"
+                  name="recipeIngredients"
+                ></textarea>
+              </div>
+  
+              <div class="mb-3">
+                <label for="recipeInstructions" class="form-label">Instructions</label>
+                <textarea
+                  id="recipeInstructions"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Step-by-step Instructions"
+                  [(ngModel)]="newRecipe.instructions"
+                  name="recipeInstructions"
+                ></textarea>
+              </div>
+  
+              <div class="mb-3">
+                <label for="recipeCategory" class="form-label">Category ID</label>
+                <input
+                  id="recipeCategory"
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="newRecipe.categoryId"
+                  name="recipeCategory"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="recipeImage" class="form-label">Upload Image</label>
+                <input id="recipeImage" type="file" class="form-control" (change)="onFileSelected($event)" />
+              </div>
+  
+              <div class="d-grid">
+                <button type="button" class="btn btn-success" (click)="saveRecipe()">Save Recipe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,6 +1,75 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div class="container">
     <h2>Recipe</h2>
     <p>Discover detailed step-by-step recipes.</p>
-  </div>
-  
+  </div> -->
+<!--   
+  <app-header></app-header>
+<div class="container">
+  <h2>Recipes</h2>
+  <p>Explore a variety of delicious recipes.</p>
+
+
+  <button class="btn btn-success mb-3" (click)="navigateToAddRecipe()">+ Add New Recipe</button>
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Ingredients</th>
+        <th>Instructions</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipe of recipes">
+        <td>{{ recipe.id }}</td>
+        <td>{{ recipe.name }}</td>
+        <td>{{ recipe.description }}</td>
+        <td>{{ recipe.ingredients }}</td>
+        <td>{{ recipe.instructions }}</td>
+        <td>
+          <button class="btn btn-info" (click)="fetchRecipeById(recipe.id)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>   -->
+
+
+<app-header></app-header>
+
+<div class="container">
+  <h2>Recipes</h2>
+  <p>Explore a variety of delicious recipes.</p>
+
+  <!-- Add New Recipe Button -->
+  <button class="btn btn-success mb-3" (click)="navigateToAddRecipe()">+ Add New Recipe</button>
+
+  <!-- Display All Recipes -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipe of recipes">
+        <td>{{ recipe.id }}</td>
+        <td>{{ recipe.name }}</td>
+        <td>{{ recipe.description }}</td>
+        <td><img [src]="recipe.imageUrl" alt="{{ recipe.name }}" style="width: 100px; height: 100px;" /></td>
+        <td>
+          <button class="btn btn-info" (click)="fetchRecipeById(recipe.id)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

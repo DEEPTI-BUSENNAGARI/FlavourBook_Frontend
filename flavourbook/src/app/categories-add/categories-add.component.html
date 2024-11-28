@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h4>Add New Category</h4>
+          </div>
+          <div class="card-body">
+            <form>
+              <!-- Category Name -->
+              <div class="mb-3">
+                <label for="categoryName" class="form-label">Category Name</label>
+                <input
+                  id="categoryName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Category Name"
+                  [(ngModel)]="newCategoryName"
+                  name="categoryName"
+                />
+              </div>
+  
+              <!-- Category Description -->
+              <div class="mb-3">
+                <label for="categoryDescription" class="form-label">Category Description</label>
+                <textarea
+                  id="categoryDescription"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Enter Category Description"
+                  [(ngModel)]="newCategoryDescription"
+                  name="categoryDescription"
+                ></textarea>
+              </div>
+  
+              <!-- File Upload -->
+              <div class="mb-3">
+                <label for="categoryImage" class="form-label">Upload Image</label>
+                <input
+                  id="categoryImage"
+                  type="file"
+                  class="form-control"
+                  (change)="onFileSelected($event)"
+                />
+              </div>
+  
+              <!-- Save Button -->
+              <div class="d-grid">
+                <button
+                  type="button"
+                  class="btn btn-success btn-block"
+                  (click)="saveCategory()"
+                >
+                  Save Category
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
